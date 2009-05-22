@@ -8,6 +8,6 @@ Gem::Specification.new do |s|
   s.author = 'jugyo'
   s.email = 'jugyo.org@gmail.com'
   s.homepage = 'http://github.com/jugyo/d'
-  s.rubyforge_project = 'kernelg'
+  s.rubyforge_project = 'kerneld'
   s.has_rdoc = false
 end
