@@ -11,6 +11,10 @@ The Kernel.d starts a debugger of 'ruby-debug'.
 Install
 --------
 
+    sudo gem install d
+
+or
+
     sudo gem install jugyo-d --source http://gems.github.com
 
 Synopsis
