@@ -6,7 +6,7 @@ task :gemspec do |t|
     file << <<-EOS
 Gem::Specification.new do |s|
   s.name = 'd'
-  s.version = '1.0.0'
+  s.version = '1.1.0'
   s.summary = "Kernel.d"
   s.description = "module Kernel; def d; require 'ruby-debug'; debugger; end; end"
   s.files = %w( lib/d.rb README.markdown Rakefile )
