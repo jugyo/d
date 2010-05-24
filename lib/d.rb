@@ -1,1 +1,4 @@
-module Kernel; def d; require 'ruby-debug'; debugger; end; end
+require 'ruby-debug'
+module Kernel
+  alias_method :d, :debugger
+end
