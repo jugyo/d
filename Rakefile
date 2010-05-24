@@ -1,28 +1,17 @@
-$:.unshift File.dirname(__FILE__) + '/lib/'
+require 'rubygems'
+require 'rake'
 
-desc 'Generate gemspec'
-task :gemspec do |t|
-  open('d.gemspec', "wb" ) do |file|
-    file << <<-EOS
-Gem::Specification.new do |s|
-  s.name = 'd'
-  s.version = '1.1.0'
-  s.summary = "Kernel.d"
-  s.description = "module Kernel; def d; require 'ruby-debug'; debugger; end; end"
-  s.files = %w( lib/d.rb README.markdown Rakefile )
-  s.add_dependency("ruby-debug", ">= 0.10.3")
-  s.author = 'jugyo'
-  s.email = 'jugyo.org@gmail.com'
-  s.homepage = 'http://github.com/jugyo/d'
-  s.rubyforge_project = 'kernelg'
-  s.has_rdoc = false
-end
-    EOS
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gem|
+    gem.name = "d"
+    gem.summary = %Q{Kernel.d'}
+    gem.description = %Q{Kernel.d that is an alias of Kernel.debugger.}
+    gem.email = "jugyo.org@gmail.com"
+    gem.homepage = "http://github.com/jugyo/d"
+    gem.authors = ["jugyo"]
+    gem.add_dependency "ruby-debug"
   end
-  puts "Generate gemspec"
-end
-
-desc 'Generate gem'
-task :gem => :gemspec do |t|
-  system 'gem', 'build', 'd.gemspec'
+rescue LoadError
+  puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end
